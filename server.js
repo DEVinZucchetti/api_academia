@@ -22,7 +22,7 @@ app.post('/users', (req, res) => {
   });
 });
 
-app.post('/login', (req, res) => {
+app.post('/sessions', (req, res) => {
   const { email, password } = req.body;
 
   const query = `
