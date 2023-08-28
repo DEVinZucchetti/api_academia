@@ -36,7 +36,7 @@ app.post('/sessions', (req, res) => {
 
     if (user) {
 
-      res.json({ name: user.name, type_plan: user.type_plan });
+      res.json({ name: user.name, type_plan: user.type_plan, token: 'token_jwt' });
     } else {
       res.status(401).json({ error: 'Credenciais inválidas' });
     }
