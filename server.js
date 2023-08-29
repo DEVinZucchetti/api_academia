@@ -2,9 +2,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('./db/database');
+const cors = require('cors')
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors({origin: '*'}))
 
 app.post('/users', (req, res) => {
   const { name, email, password, type_plan } = req.body;
