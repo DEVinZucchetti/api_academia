@@ -225,7 +225,7 @@ app.get('/workouts', (req, res) => {
 });
 
 
-app.post('workouts/check', (req, res) => {
+app.post('/workouts/check', (req, res) => {
   const { student_id, workout_id, day_of_week } = req.body;
   const query = `
     INSERT INTO workouts_students (student_id, workout_id, day_of_week)
