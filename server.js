@@ -38,7 +38,7 @@ app.post('/sessions', (req, res) => {
 
     if (user) {
 
-      res.json({ name: user.name, type_plan: user.type_plan, token: 'token_jwt' });
+      res.json({ name: user.name, type_plan: user.type_plan, token: 'token_jwt',  email: user.email });
     } else {
       res.status(401).json({ error: 'Credenciais inválidas' });
     }
@@ -164,6 +164,7 @@ app.get('/dashboard', (req, res) => {
 app.post('/workouts', (req, res) => {
   const {
     student_id,
+    
     exercise_id,
     repetitions,
     weight,
