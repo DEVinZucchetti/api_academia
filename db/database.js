@@ -31,6 +31,7 @@ db.run(`
     contact TEXT NOT NULL,
     date_birth TEXT NOT NULL,
     cep TEXT NOT NULL,
+    number TEXT,
     street TEXT NOT NULL,
     province TEXT NOT NULL,
     neighborhood TEXT NOT NULL,

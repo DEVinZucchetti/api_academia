@@ -37,7 +37,6 @@ app.post('/sessions', (req, res) => {
     }
 
     if (user) {
-
       res.json({ name: user.name, type_plan: user.type_plan, token: 'token_jwt',  email: user.email });
     } else {
       res.status(401).json({ error: 'Credenciais inválidas' });
@@ -85,11 +84,12 @@ app.post('/students', (req, res) => {
     province,
     neighborhood,
     city,
+    number,
     complement
   } = req.body;
   const query = `
-    INSERT INTO students (name, email, contact, date_birth, cep, street, province, neighborhood, city, complement)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO students (name, email, contact, date_birth, cep, street, province, neighborhood, city, complement, number)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `;
   db.run(
     query,
@@ -103,7 +103,8 @@ app.post('/students', (req, res) => {
       province,
       neighborhood,
       city,
-      complement
+      complement,
+      number
     ],
     function (err) {
       if (err) {
